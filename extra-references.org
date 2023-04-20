@@ -1,0 +1,12 @@
+#+title: Other references
+
+* YouTube
+:PROPERTIES:
+:CREATED:  Thu Apr 20 11:31:14 2023
+:END:
+** Org-Mode
+:PROPERTIES:
+:CREATED:  Thu Apr 20 11:31:20 2023
+:END:
+
+- [[https://youtube.com/playlist?list=PLVtKhBrRV_ZkPnBtt_TD1Cs9PJlU0IIdE][OrgMode tutorial, Rainer König]]
