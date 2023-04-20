@@ -1,0 +1,15 @@
+#+title: Questions & answers
+* =emacs= versus =emacs.d/init.el=
+:PROPERTIES:
+:CREATED:  Thu Apr 20 11:52:49 2023
+:END:
+
+Sources:
+- [[https://emacs.stackexchange.com/questions/51559/difference-between-emacs-and-init-el-and-the-point-of-not-keeping-multiple-in][SO:difference-between-emacs-and-init-el-and-the-point-of-not-keeping-multiple-in]]
+- [[https://emacs.stackexchange.com/questions/1/are-there-any-advantages-to-using-emacs-d-init-el-instead-of-emacs][SO:are-there-any-advantages-to-using-emacs-d-init-el-instead-of-emacs]]
+* Which Emacs version ?
+:PROPERTIES:
+:CREATED:  Thu Apr 20 12:00:05 2023
+:END:
+-> 27
+
