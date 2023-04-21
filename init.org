@@ -1,0 +1,53 @@
+Tangle file to generate Emacs configuration:
+
+#+begin_src text
+  M-x org-bable-tangle
+#+end_src
+
+* Straight
+  :PROPERTIES:
+  :header-args: :noeval :tangle init.el :tangle-mode o444
+  :END:
+
+  [[https://github.com/radian-software/straight.el][Package manager]] providing access to most packages in Emacs ecosystem.
+
+  ~straight~ identify changed files in handled repositories in order to rebuild
+  them, this setting (see [[https://github.com/radian-software/straight.el#customizing-when-packages-are-built][doc]]) limits this checking:
+
+  #+begin_src emacs-lisp
+    (setq straight-check-for-modifications (quote (find-when-checking)))
+  #+end_src
+
+
+  #+begin_src emacs-lisp
+    (defvar bootstrap-version)
+    (let ((bootstrap-file
+           (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+          (bootstrap-version 6))
+      (unless (file-exists-p bootstrap-file)
+        (with-current-buffer
+            (url-retrieve-synchronously
+             "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+             'silent 'inhibit-cookies)
+          (goto-char (point-max))
+          (eval-print-last-sexp)))
+      (load bootstrap-file nil 'nomessage))
+  #+end_src
+
+  Install an updated version of [[https://orgmode.org/][Org-mode]] (Emacs comes with a built-in version):
+
+  #+begin_src emacs-lisp
+    (straight-use-package 'org)
+    (straight-use-package 'org-contrib)
+  #+end_src
+
+* Magit
+  :PROPERTIES:
+  :header-args: :noeval :tangle init.el :tangle-mode o444
+  :END:
+
+  A porcelain interface to Git
+
+  #+begin_src emacs-lisp
+    (straight-use-package 'magit)
+  #+end_src
