@@ -10,3 +10,13 @@
 :END:
 
 - [[https://youtube.com/playlist?list=PLVtKhBrRV_ZkPnBtt_TD1Cs9PJlU0IIdE][OrgMode tutorial, Rainer König]]
+
+* LaTeX on Emacs
+
+  An interesting blog post about writing LaTeX with Emacs:
+
+  https://karthinks.com/software/latex-input-for-impatient-scholars/
+
+  This also applies to note taking with Org-mode. Even if it may take some time
+  to get up to the author's fluency/speed, this post shows what is possible to
+  do.
