@@ -1,7 +1,7 @@
 Tangle file to generate Emacs configuration:
 
 #+begin_src text
-  M-x org-bable-tangle
+  M-x org-babel-tangle
 #+end_src
 
 * Straight
