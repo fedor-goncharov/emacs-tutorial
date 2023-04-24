@@ -16,4 +16,8 @@
 (straight-use-package 'org)
 (straight-use-package 'org-contrib)
 
+(straight-use-package 'use-package)
+
+(require 'use-package)
+
 (straight-use-package 'magit)

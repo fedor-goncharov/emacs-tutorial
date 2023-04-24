@@ -41,6 +41,26 @@ Tangle file to generate Emacs configuration:
     (straight-use-package 'org-contrib)
   #+end_src
 
+* use-package
+  :PROPERTIES:
+  :header-args: :noeval :tangle init.el :tangle-mode o444
+  :END:
+
+  [[https://github.com/jwiegley/use-package][use-package]] is a set of handful macros to keep configuration as modular as
+  possible, one may find a lot of configuration out there using this package as
+  a base:
+
+  #+begin_src emacs-lisp
+    (straight-use-package 'use-package)
+  #+end_src
+
+  Package must be loaded before usage:
+
+  #+begin_src emacs-lisp
+    (require 'use-package)
+  #+end_src
+
+
 * Magit
   :PROPERTIES:
   :header-args: :noeval :tangle init.el :tangle-mode o444
