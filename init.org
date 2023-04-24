@@ -71,3 +71,38 @@ Tangle file to generate Emacs configuration:
   #+begin_src emacs-lisp
     (straight-use-package 'magit)
   #+end_src
+
+
+* Vertico
+  :PROPERTIES:
+  :header-args: :noeval :tangle init.el :tangle-mode o444
+  :END:
+
+  [[https://github.com/minad/vertico][Vertico]] is an user interface for completion in mini-buffer, it's a quite
+  recent package but it tries to be as compliant as possible with built-in Emacs
+  completion system:
+
+  #+begin_src emacs-lisp
+    (straight-use-package 'vertico)
+  #+end_src
+
+  Minimal configuration:
+
+  #+begin_src emacs-lisp
+    (use-package vertico
+      :init
+      (defun crm-indicator (args)
+        (cons (concat "[CRM] " (car args)) (cdr args)))
+      ;;
+      (advice-add #'completing-read-multiple :filter-args #'crm-indicator)
+      (setq minibuffer-prompt-properties
+            '(read-only t cursor-intangible t face minibuffer-prompt))
+      (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
+      (setq vertico-cycle t
+            enable-recursive-minibuffers t)
+      (vertico-mode +1))
+  #+end_src
+
+  Check its usage with ~M-x~, this configuration is rather minimal but can be
+  enhanced with other packages such as [[https://github.com/minad/marginalia][Marginalia]] (get annotations about
+  completions) and [[https://github.com/oantolin/orderless][Orderless]] (fuzzy, regexp selection).

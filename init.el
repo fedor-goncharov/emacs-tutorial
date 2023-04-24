@@ -21,3 +21,18 @@
 (require 'use-package)
 
 (straight-use-package 'magit)
+
+(straight-use-package 'vertico)
+
+(use-package vertico
+  :init
+  (defun crm-indicator (args)
+    (cons (concat "[CRM] " (car args)) (cdr args)))
+  ;;
+  (advice-add #'completing-read-multiple :filter-args #'crm-indicator)
+  (setq minibuffer-prompt-properties
+        '(read-only t cursor-intangible t face minibuffer-prompt))
+  (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
+  (setq vertico-cycle t
+        enable-recursive-minibuffers t)
+  (vertico-mode +1))
