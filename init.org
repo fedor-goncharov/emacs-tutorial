@@ -1,8 +1,19 @@
-Tangle file to generate Emacs configuration:
+Tangle to generate Emacs configuration (init.el) from this Org-file:
 
 #+begin_src text
   M-x org-babel-tangle
 #+end_src
+* Before any package
+  :PROPERTIES:
+  :header-args: :noeval :tangle init.el :tangle-mode o444
+  :END:
+  
+  Electric behavior is a standard notion in Emacs - certain keys (e.g., <Enter>) may behave
+  differently, depending on the context. Key <Enter> creates a NewLine where it pressed, but 
+  if the line had indentation, electric behavior will also indent the cursor on the new line.
+  #+begin_src emacs-lisp
+    (electric-indent-mode +1)
+  #+end_src
 
 * Straight
   :PROPERTIES:
