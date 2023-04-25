@@ -117,3 +117,25 @@ Tangle to generate Emacs configuration (init.el) from this Org-file:
   Check its usage with ~M-x~, this configuration is rather minimal but can be
   enhanced with other packages such as [[https://github.com/minad/marginalia][Marginalia]] (get annotations about
   completions) and [[https://github.com/oantolin/orderless][Orderless]] (fuzzy, regexp selection).
+
+* Theme
+  :PROPERTIES:
+  :header-args: :noeval :tangle init.el :tangle-mode o444
+  :END:
+
+  There are a lot of Emacs themes out there, unfortunately a lot of them don't
+  support other packages or they don't have enough contrast. However, as for
+  any configuration, this is a matter of taste.
+
+  [[https://github.com/protesilaos/modus-themes][Modus themes]] are highly accessible (~source~ is not the standard one as it has a
+  low bandwidth):
+
+  #+begin_src emacs-lisp
+    (straight-use-package '(modus-themes :source  emacsmirror-mirror))
+  #+end_src
+
+  #+begin_src emacs-lisp
+    (use-package modus-themes
+      :config
+      (load-theme 'modus-vivendi :no-confirm))
+  #+end_src

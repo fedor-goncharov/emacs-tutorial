@@ -36,3 +36,9 @@
   (setq vertico-cycle t
         enable-recursive-minibuffers t)
   (vertico-mode +1))
+
+(straight-use-package '(modus-themes :source  emacsmirror-mirror))
+
+(use-package modus-themes
+  :config
+  (load-theme 'modus-vivendi :no-confirm))
