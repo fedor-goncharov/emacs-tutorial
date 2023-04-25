@@ -1,3 +1,5 @@
+(electric-indent-mode +1)
+
 (setq straight-check-for-modifications (quote (find-when-checking)))
 
 (defvar bootstrap-version)
