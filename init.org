@@ -118,6 +118,29 @@ Tangle to generate Emacs configuration (init.el) from this Org-file:
   enhanced with other packages such as [[https://github.com/minad/marginalia][Marginalia]] (get annotations about
   completions) and [[https://github.com/oantolin/orderless][Orderless]] (fuzzy, regexp selection).
 
+* Marginalia
+  :PROPERTIES:
+  :header-args: :noeval :tangle init.el :tangle-mode o444
+  :END:
+
+  [[https://github.com/minad/marginalia][Marginalia]] adds annotations in mini-buffer. Useful for commands through ~M-x~
+  and file/buffer choosing.
+
+  #+begin_src emacs-lisp
+    (straight-use-package 'marginalia)
+  #+end_src
+
+  No fancy configuration, keybinding in mini-buffer's map toggles annotations
+  (if too verbose...):
+
+  #+begin_src emacs-lisp
+    (use-package marginalia
+      :bind
+      (:map minibuffer-local-map ("C-M-a" . marginalia-cycle))
+      :init
+      (marginalia-mode +1))
+  #+end_src
+
 * Theme
   :PROPERTIES:
   :header-args: :noeval :tangle init.el :tangle-mode o444

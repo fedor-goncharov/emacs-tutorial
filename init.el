@@ -39,6 +39,14 @@
         enable-recursive-minibuffers t)
   (vertico-mode +1))
 
+(straight-use-package 'marginalia)
+
+(use-package marginalia
+  :bind
+  (:map minibuffer-local-map ("C-M-a" . marginalia-cycle))
+  :init
+  (marginalia-mode +1))
+
 (straight-use-package '(modus-themes :source  emacsmirror-mirror))
 
 (use-package modus-themes
