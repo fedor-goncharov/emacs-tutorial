@@ -20,3 +20,10 @@
   This also applies to note taking with Org-mode. Even if it may take some time
   to get up to the author's fluency/speed, this post shows what is possible to
   do.
+
+* Emacs FAQ
+
+  As usual, Emacs documentation is a good resource and Emacs FAQ is not an
+  exception:
+
+  https://www.gnu.org/software/emacs/manual/html_mono/efaq.html
