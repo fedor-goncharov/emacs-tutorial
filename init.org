@@ -71,7 +71,6 @@ Tangle to generate Emacs configuration (init.el) from this Org-file:
     (require 'use-package)
   #+end_src
 
-
 * Magit
   :PROPERTIES:
   :header-args: :noeval :tangle init.el :tangle-mode o444
@@ -82,7 +81,6 @@ Tangle to generate Emacs configuration (init.el) from this Org-file:
   #+begin_src emacs-lisp
     (straight-use-package 'magit)
   #+end_src
-
 
 * Vertico
   :PROPERTIES:
@@ -140,6 +138,32 @@ Tangle to generate Emacs configuration (init.el) from this Org-file:
       :init
       (marginalia-mode +1))
   #+end_src
+
+* Which key
+  :PROPERTIES:
+  :header-args: :noeval :tangle init.el :tangle-mode o444
+  :END:
+
+  [[https://github.com/justbur/emacs-which-key][Which-key]] is a discoverability minor mode to show key-bindings:
+
+  #+begin_src emacs-lisp
+    (straight-use-package 'which-key)
+  #+end_src
+
+  Activate mode after Emacs initialisation and use standard configuration:
+
+  #+begin_src emacs-lisp
+    (use-package marginalia
+      :hook
+      (after-init . which-key-mode))
+  #+end_src
+
+  If pop-up is too annoying then it may be useful to set the following
+  variables:
+
+  - ~which-key-show-early-on-C-h~ and
+  - ~which-key-idle-delay~
+
 
 * Theme
   :PROPERTIES:

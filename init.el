@@ -47,6 +47,12 @@
   :init
   (marginalia-mode +1))
 
+(straight-use-package 'which-key)
+
+(use-package marginalia
+  :hook
+  (after-init . which-key-mode))
+
 (straight-use-package '(modus-themes :source  emacsmirror-mirror))
 
 (use-package modus-themes
