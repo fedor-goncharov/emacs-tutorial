@@ -164,6 +164,30 @@ Tangle to generate Emacs configuration (init.el) from this Org-file:
   - ~which-key-show-early-on-C-h~ and
   - ~which-key-idle-delay~
 
+* Avy
+:PROPERTIES:
+:header-args: :noeval :tangle init.el :tangle-mode o444
+:END:
+
+  [[https://github.com/abo-abo/avy][Avy]] provides commands for fast displacement in a frame.
+
+  #+begin_src emacs-lisp
+    (straight-use-package 'avy)
+  #+end_src
+
+  Bindings are not standard:
+
+  #+begin_src emacs-lisp
+    (use-package avy
+      :bind
+      ("C-M-," . avy-goto-char-timer)
+      ("C-M-." . avy-pop-mark)
+      :config
+      (setq avy-timeout-seconds 2
+            avy-all-windows 'all-frames))
+  #+end_src
+
+  Another interesting command to bind would be [[https://github.com/abo-abo/avy#avy-goto-word-1][avy-goto-word-1]].
 
 * Theme
   :PROPERTIES:

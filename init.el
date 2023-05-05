@@ -53,6 +53,16 @@
   :hook
   (after-init . which-key-mode))
 
+(straight-use-package 'avy)
+
+(use-package avy
+  :bind
+  ("C-M-," . avy-goto-char-timer)
+  ("C-M-." . avy-pop-mark)
+  :config
+  (setq avy-timeout-seconds 2
+        avy-all-windows 'all-frames))
+
 (straight-use-package '(modus-themes :source  emacsmirror-mirror))
 
 (use-package modus-themes
