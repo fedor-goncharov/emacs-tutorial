@@ -189,6 +189,26 @@ Tangle to generate Emacs configuration (init.el) from this Org-file:
 
   Another interesting command to bind would be [[https://github.com/abo-abo/avy#avy-goto-word-1][avy-goto-word-1]].
 
+* Undo-tree
+:PROPERTIES:
+:header-args: :noeval :tangle init.el :tangle-mode o444
+:END:
+
+  [[https://www.dr-qubit.org/undo-tree.html][Undo tree]] is a mode to visualise and navigate undo history as a tree.
+
+  #+begin_src emacs-lisp
+    (straight-use-package 'undo-tree)
+  #+end_src
+
+  No special configuration required but package loading goes after Emacs
+  initialisation:
+
+  #+begin_src emacs-lisp
+    (use-package undo-tree
+      :hook
+      (after-init . global-undo-tree-mode))
+  #+end_src
+
 * Theme
   :PROPERTIES:
   :header-args: :noeval :tangle init.el :tangle-mode o444

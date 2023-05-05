@@ -63,6 +63,12 @@
   (setq avy-timeout-seconds 2
         avy-all-windows 'all-frames))
 
+(straight-use-package 'undo-tree)
+
+(use-package undo-tree
+  :hook
+  (after-init . global-undo-tree-mode))
+
 (straight-use-package '(modus-themes :source  emacsmirror-mirror))
 
 (use-package modus-themes
